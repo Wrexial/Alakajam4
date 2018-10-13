@@ -649,7 +649,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 6e421def-aadd-4cab-9ff1-fad38acb9462
   projectName: Ark4
   organizationId: wrexialmt

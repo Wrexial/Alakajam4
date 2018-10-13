@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e6955ec5-06e6-4f37-b7f5-479afebf27d3}">
+        <property name="assetPath">
+            <value>Animations/oilingUp.aif</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>5.0735600907029479</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{ca54a3bf-8435-4e05-a0ab-c41e47e53d23}</destination>
+        </relationship>
+    </object>
+</objects>

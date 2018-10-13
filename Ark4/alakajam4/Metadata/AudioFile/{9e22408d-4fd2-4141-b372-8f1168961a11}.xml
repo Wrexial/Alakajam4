@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{9e22408d-4fd2-4141-b372-8f1168961a11}">
+        <property name="assetPath">
+            <value>Animations/lookLeftAndRight2.aif</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>7.1285260770975061</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{ca54a3bf-8435-4e05-a0ab-c41e47e53d23}</destination>
+        </relationship>
+    </object>
+</objects>
