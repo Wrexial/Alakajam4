@@ -1,10 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using FMOD;
+﻿using FMOD.Studio;
 using FMODUnity;
-using FMOD.Studio;
-using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {

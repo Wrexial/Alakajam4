@@ -13,7 +13,7 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     private int _initialPointerId;
     private Camera _mainCamera;
     private Vector3 _screenPoint;
-    private Vector3 _startLocation;
+    private Vector3 _startPosition;
 
     public bool IsInUse { get { return HeldPart != null; } }
 
@@ -35,14 +35,15 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         gameObject.SetActive(true);
 
         HeldPart = element;
-        _target.SetParent(transform);
-        _target.localPosition = Vector3.zero;
-        
-        _target.SetParent(null, true);
-        _target.localScale = Vector3.one;
-        _target.localPosition = new Vector3(_target.localPosition.x * 0.1f, _target.localPosition.y * 0.1f, 0);
+        //_target.SetParent(transform);
+        //_target.localPosition = Vector3.zero;
 
-        element.Enable();
+        //_target.SetParent(null, true);
+        //_target.localScale = Vector3.one;
+        //_target.localPosition = new Vector3(_target.localPosition.x * 0.1f, _target.localPosition.y * 0.1f, 0);
+
+        _startPosition = _target.localPosition;
+        element.Enable(false);
     }
 
     private void RemoveTarget()
@@ -55,7 +56,6 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     {
         if (_initialPointerId == int.MaxValue)
         {
-            _startLocation = _target.position;
             _initialPointerId = eventData.pointerId;
         }
     }
@@ -65,17 +65,11 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         if (_initialPointerId == eventData.pointerId)
         {
             _initialPointerId = int.MaxValue;
+            _target.localPosition = _startPosition;
 
-            if (false) //Todo : Check if we're on the correct drop area
-            {
-                //_target.position = _startLocation;
-            }
-            else
-            {
-                HeldPart.Disable();
-                _onReleaseAction?.Invoke(HeldPart);
-                RemoveTarget();
-            }
+            HeldPart.Disable(false);
+            _onReleaseAction?.Invoke(HeldPart);
+            RemoveTarget();
         }
     }
 

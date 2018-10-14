@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -61,7 +62,8 @@ public class DragAssist : MonoBehaviour
                     break;
             }
 
-            part.Disable();
+            part.Disable(true, false);
+            part.Disable(false, false);
         }
 
         _foodParts.Shuffle();
@@ -78,35 +80,49 @@ public class DragAssist : MonoBehaviour
         return (SlotType)i;
     }
 
-    public BodyPart GetRandomPart(SlotType slot)
+    public BodyPart GetRandomPart(SlotType slot, BodyPart part)
     {
+        BodyPart bodyPart;
         var i = 0;
         switch (slot)
         {
             case SlotType.Food:
                 i = Random.Range(0, _foodParts.Count);
-                return _foodParts[i];
+                bodyPart = _foodParts[i];
+                break;
             case SlotType.Oil:
                 i = Random.Range(0, _oilParts.Count);
-                return _oilParts[i];
+                bodyPart = _oilParts[i];
+                break;
             case SlotType.Leg:
                 i = Random.Range(0, _legParts.Count);
-                return _legParts[i];
+                bodyPart = _legParts[i];
+                break;
             case SlotType.Eye:
                 i = Random.Range(0, _eyeParts.Count);
-                return _eyeParts[i];
+                bodyPart = _eyeParts[i];
+                break;
             case SlotType.TopHeadPlate:
                 i = Random.Range(0, _topHeadParts.Count);
-                return _topHeadParts[i];
+                bodyPart = _topHeadParts[i];
+                break;
             default:
                 i = Random.Range(0, _bottomHeadParts.Count);
-                return _bottomHeadParts[i];
+                bodyPart = _bottomHeadParts[i];
+                break;
         }
+
+        if (bodyPart == part)
+        {
+            bodyPart = GetRandomPart(slot, part);
+        }
+
+        return bodyPart;
     }
 
-    public void SetRandomPartInUI(SlotType slot)
+    public void SetRandomPartInUI(SlotType slot, BodyPart oldPart)
     {
-        var part = GetRandomPart(slot);
+        var part = GetRandomPart(slot, oldPart);
 
         switch (slot)
         {

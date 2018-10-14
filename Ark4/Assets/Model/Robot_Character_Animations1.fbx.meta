@@ -1,0 +1,670 @@
+fileFormatVersion: 2
+guid: 2474919ca5f6c4043b35c14d6eb0b907
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Accessory_L_LOC_GRP
+    100002: Accessory_L_LOC_JNT
+    100004: Accessory_R_LOC_GRP
+    100006: Accessory_R_LOC_JNT
+    100008: Antenna
+    100010: Antenna_Ball
+    100012: Antenna_Base
+    100014: Antenna_Pole
+    100016: Arm_F_1_JNT
+    100018: Arm_F_2_JNT
+    100020: Arm_F_3_JNT
+    100022: Arm_F_4_JNT
+    100024: Arm_F_End_JNT
+    100026: Arm_L_1_JNT
+    100028: Arm_L_2_JNT
+    100030: Arm_L_3_JNT
+    100032: Arm_L_4_JNT
+    100034: Arm_L_End_JNT
+    100036: Arm_R_1_JNT
+    100038: Arm_R_2_JNT
+    100040: Arm_R_3_JNT
+    100042: Arm_R_4_JNT
+    100044: Arm_R_End_JNT
+    100046: Balancer_GEO
+    100048: BladeAxle
+    100050: BladeMain
+    100052: Exhaust1_GEO
+    100054: Exhaust2_GEO
+    100056: Eye
+    100058: Eye_LOC_JNT
+    100060: EyeLens_GEO
+    100062: EyeSocket_GEO
+    100064: Gun_L
+    100066: Gun_L_Case
+    100068: Gun_L_Case 1
+    100070: Gun_L_Connector
+    100072: Gun_L_Connector 1
+    100074: Gun_L_Hole1
+    100076: Gun_L_Hole1 1
+    100078: Gun_L_Hole2
+    100080: Gun_L_Hole2 1
+    100082: Gun_L_Hole3
+    100084: Gun_L_Hole3 1
+    100086: Gun_L_Hole4
+    100088: Gun_L_Hole4 1
+    100090: Gun_L_Shoulder
+    100092: Gun_L_Shoulder 1
+    100094: Gun_R
+    100096: Head_Inside_GEO
+    100098: Head_Outside_Bottom_GEO
+    100100: Head_Outside_Top_GEO
+    100102: Head_Outside_Top_Panel_GEO
+    100104: Helmet
+    100106: Helmet_Base
+    100108: Helmet_Ear_L
+    100110: Helmet_Ear_R
+    100112: Helmet_LOC_JNT
+    100114: InnerRotator_GEO
+    100116: Leg_F_Cover_Geo
+    100118: Leg_F_End_Geo
+    100120: Leg_F_Middle1_Rotate_GEO
+    100122: Leg_F_Middle2_Rotate_GEO
+    100124: Leg_F_Top_Bone_GEO
+    100126: Leg_F_Top_Rotate_GEO
+    100128: Leg_R_Cover_Geo
+    100130: Leg_R_Cover_Geo 1
+    100132: Leg_R_End_Geo
+    100134: Leg_R_End_Geo 1
+    100136: Leg_R_Middle1_Rotate_GEO
+    100138: Leg_R_Middle1_Rotate_GEO 1
+    100140: Leg_R_Middle2_Rotate_GEO
+    100142: Leg_R_Middle2_Rotate_GEO 1
+    100144: Leg_R_Top_Bone_GEO
+    100146: Leg_R_Top_Bone_GEO 1
+    100148: Leg_R_Top_Rotate_GEO
+    100150: Leg_R_Top_Rotate_GEO 1
+    100152: Main_Rig_JNT
+    100154: MainGear_GEO
+    100156: MiddleAxle_GEO
+    100158: //RootNode
+    100160: RotatorGear_GEO
+    100162: Saw
+    100164: Saw_Blade
+    100166: Saw_Connector
+    100168: Saw_Hand
+    100170: Saw_Shoulder
+    100172: Spike37
+    100174: Torch_GEO
+    100176: TorchArm_GEO
+    100178: TorchLens_GEO
+    100180: Upper_JNT
+    400000: Accessory_L_LOC_GRP
+    400002: Accessory_L_LOC_JNT
+    400004: Accessory_R_LOC_GRP
+    400006: Accessory_R_LOC_JNT
+    400008: Antenna
+    400010: Antenna_Ball
+    400012: Antenna_Base
+    400014: Antenna_Pole
+    400016: Arm_F_1_JNT
+    400018: Arm_F_2_JNT
+    400020: Arm_F_3_JNT
+    400022: Arm_F_4_JNT
+    400024: Arm_F_End_JNT
+    400026: Arm_L_1_JNT
+    400028: Arm_L_2_JNT
+    400030: Arm_L_3_JNT
+    400032: Arm_L_4_JNT
+    400034: Arm_L_End_JNT
+    400036: Arm_R_1_JNT
+    400038: Arm_R_2_JNT
+    400040: Arm_R_3_JNT
+    400042: Arm_R_4_JNT
+    400044: Arm_R_End_JNT
+    400046: Balancer_GEO
+    400048: BladeAxle
+    400050: BladeMain
+    400052: Exhaust1_GEO
+    400054: Exhaust2_GEO
+    400056: Eye
+    400058: Eye_LOC_JNT
+    400060: EyeLens_GEO
+    400062: EyeSocket_GEO
+    400064: Gun_L
+    400066: Gun_L_Case
+    400068: Gun_L_Case 1
+    400070: Gun_L_Connector
+    400072: Gun_L_Connector 1
+    400074: Gun_L_Hole1
+    400076: Gun_L_Hole1 1
+    400078: Gun_L_Hole2
+    400080: Gun_L_Hole2 1
+    400082: Gun_L_Hole3
+    400084: Gun_L_Hole3 1
+    400086: Gun_L_Hole4
+    400088: Gun_L_Hole4 1
+    400090: Gun_L_Shoulder
+    400092: Gun_L_Shoulder 1
+    400094: Gun_R
+    400096: Head_Inside_GEO
+    400098: Head_Outside_Bottom_GEO
+    400100: Head_Outside_Top_GEO
+    400102: Head_Outside_Top_Panel_GEO
+    400104: Helmet
+    400106: Helmet_Base
+    400108: Helmet_Ear_L
+    400110: Helmet_Ear_R
+    400112: Helmet_LOC_JNT
+    400114: InnerRotator_GEO
+    400116: Leg_F_Cover_Geo
+    400118: Leg_F_End_Geo
+    400120: Leg_F_Middle1_Rotate_GEO
+    400122: Leg_F_Middle2_Rotate_GEO
+    400124: Leg_F_Top_Bone_GEO
+    400126: Leg_F_Top_Rotate_GEO
+    400128: Leg_R_Cover_Geo
+    400130: Leg_R_Cover_Geo 1
+    400132: Leg_R_End_Geo
+    400134: Leg_R_End_Geo 1
+    400136: Leg_R_Middle1_Rotate_GEO
+    400138: Leg_R_Middle1_Rotate_GEO 1
+    400140: Leg_R_Middle2_Rotate_GEO
+    400142: Leg_R_Middle2_Rotate_GEO 1
+    400144: Leg_R_Top_Bone_GEO
+    400146: Leg_R_Top_Bone_GEO 1
+    400148: Leg_R_Top_Rotate_GEO
+    400150: Leg_R_Top_Rotate_GEO 1
+    400152: Main_Rig_JNT
+    400154: MainGear_GEO
+    400156: MiddleAxle_GEO
+    400158: //RootNode
+    400160: RotatorGear_GEO
+    400162: Saw
+    400164: Saw_Blade
+    400166: Saw_Connector
+    400168: Saw_Hand
+    400170: Saw_Shoulder
+    400172: Spike37
+    400174: Torch_GEO
+    400176: TorchArm_GEO
+    400178: TorchLens_GEO
+    400180: Upper_JNT
+    2100000: Guns_Holes_MAT
+    2100002: HelmetEars_MAT
+    2100004: AntennaBase_MAT
+    2100006: AntennaPole_MAT
+    2100008: AntennaBall_MAT
+    2100010: Col1_Joints_MAT
+    2100012: Trim_MAT
+    2100014: Gun_Arms_MAT
+    2100016: Guns_Shoulders_MAT
+    2100018: SawBlade_Arm
+    2100020: Saw_Shoulder_MAT
+    2100022: Saw_Blade_MAT
+    2100024: Metal_MAT
+    2100026: Black_MAT
+    2100028: Col1_Main_MAT
+    2300000: Antenna_Ball
+    2300002: Antenna_Base
+    2300004: Antenna_Pole
+    2300006: Balancer_GEO
+    2300008: BladeAxle
+    2300010: BladeMain
+    2300012: Exhaust1_GEO
+    2300014: Exhaust2_GEO
+    2300016: EyeLens_GEO
+    2300018: EyeSocket_GEO
+    2300020: Gun_L_Case
+    2300022: Gun_L_Case 1
+    2300024: Gun_L_Connector
+    2300026: Gun_L_Connector 1
+    2300028: Gun_L_Hole1
+    2300030: Gun_L_Hole1 1
+    2300032: Gun_L_Hole2
+    2300034: Gun_L_Hole2 1
+    2300036: Gun_L_Hole3
+    2300038: Gun_L_Hole3 1
+    2300040: Gun_L_Hole4
+    2300042: Gun_L_Hole4 1
+    2300044: Gun_L_Shoulder
+    2300046: Gun_L_Shoulder 1
+    2300048: Head_Inside_GEO
+    2300050: Head_Outside_Bottom_GEO
+    2300052: Head_Outside_Top_GEO
+    2300054: Head_Outside_Top_Panel_GEO
+    2300056: Helmet_Base
+    2300058: Helmet_Ear_L
+    2300060: Helmet_Ear_R
+    2300062: InnerRotator_GEO
+    2300064: Leg_F_Cover_Geo
+    2300066: Leg_F_End_Geo
+    2300068: Leg_F_Middle1_Rotate_GEO
+    2300070: Leg_F_Middle2_Rotate_GEO
+    2300072: Leg_F_Top_Bone_GEO
+    2300074: Leg_F_Top_Rotate_GEO
+    2300076: Leg_R_Cover_Geo
+    2300078: Leg_R_Cover_Geo 1
+    2300080: Leg_R_End_Geo
+    2300082: Leg_R_End_Geo 1
+    2300084: Leg_R_Middle1_Rotate_GEO
+    2300086: Leg_R_Middle1_Rotate_GEO 1
+    2300088: Leg_R_Middle2_Rotate_GEO
+    2300090: Leg_R_Middle2_Rotate_GEO 1
+    2300092: Leg_R_Top_Bone_GEO
+    2300094: Leg_R_Top_Bone_GEO 1
+    2300096: Leg_R_Top_Rotate_GEO
+    2300098: Leg_R_Top_Rotate_GEO 1
+    2300100: MainGear_GEO
+    2300102: MiddleAxle_GEO
+    2300104: RotatorGear_GEO
+    2300106: Saw_Connector
+    2300108: Saw_Hand
+    2300110: Saw_Shoulder
+    2300112: Spike37
+    2300114: Torch_GEO
+    2300116: TorchArm_GEO
+    2300118: TorchLens_GEO
+    3300000: Antenna_Ball
+    3300002: Antenna_Base
+    3300004: Antenna_Pole
+    3300006: Balancer_GEO
+    3300008: BladeAxle
+    3300010: BladeMain
+    3300012: Exhaust1_GEO
+    3300014: Exhaust2_GEO
+    3300016: EyeLens_GEO
+    3300018: EyeSocket_GEO
+    3300020: Gun_L_Case
+    3300022: Gun_L_Case 1
+    3300024: Gun_L_Connector
+    3300026: Gun_L_Connector 1
+    3300028: Gun_L_Hole1
+    3300030: Gun_L_Hole1 1
+    3300032: Gun_L_Hole2
+    3300034: Gun_L_Hole2 1
+    3300036: Gun_L_Hole3
+    3300038: Gun_L_Hole3 1
+    3300040: Gun_L_Hole4
+    3300042: Gun_L_Hole4 1
+    3300044: Gun_L_Shoulder
+    3300046: Gun_L_Shoulder 1
+    3300048: Head_Inside_GEO
+    3300050: Head_Outside_Bottom_GEO
+    3300052: Head_Outside_Top_GEO
+    3300054: Head_Outside_Top_Panel_GEO
+    3300056: Helmet_Base
+    3300058: Helmet_Ear_L
+    3300060: Helmet_Ear_R
+    3300062: InnerRotator_GEO
+    3300064: Leg_F_Cover_Geo
+    3300066: Leg_F_End_Geo
+    3300068: Leg_F_Middle1_Rotate_GEO
+    3300070: Leg_F_Middle2_Rotate_GEO
+    3300072: Leg_F_Top_Bone_GEO
+    3300074: Leg_F_Top_Rotate_GEO
+    3300076: Leg_R_Cover_Geo
+    3300078: Leg_R_Cover_Geo 1
+    3300080: Leg_R_End_Geo
+    3300082: Leg_R_End_Geo 1
+    3300084: Leg_R_Middle1_Rotate_GEO
+    3300086: Leg_R_Middle1_Rotate_GEO 1
+    3300088: Leg_R_Middle2_Rotate_GEO
+    3300090: Leg_R_Middle2_Rotate_GEO 1
+    3300092: Leg_R_Top_Bone_GEO
+    3300094: Leg_R_Top_Bone_GEO 1
+    3300096: Leg_R_Top_Rotate_GEO
+    3300098: Leg_R_Top_Rotate_GEO 1
+    3300100: MainGear_GEO
+    3300102: MiddleAxle_GEO
+    3300104: RotatorGear_GEO
+    3300106: Saw_Connector
+    3300108: Saw_Hand
+    3300110: Saw_Shoulder
+    3300112: Spike37
+    3300114: Torch_GEO
+    3300116: TorchArm_GEO
+    3300118: TorchLens_GEO
+    4300000: Helmet_Base
+    4300002: Helmet_Ear_R
+    4300004: Helmet_Ear_L
+    4300006: Antenna_Base
+    4300008: Antenna_Pole
+    4300010: Antenna_Ball
+    4300012: EyeSocket_GEO
+    4300014: EyeLens_GEO
+    4300016: Gun_L_Connector
+    4300018: Gun_L_Shoulder
+    4300020: Gun_L_Case
+    4300022: Gun_L_Hole1
+    4300024: Gun_L_Hole2
+    4300026: Gun_L_Hole3
+    4300028: Gun_L_Hole4
+    4300030: Saw_Connector
+    4300032: Saw_Shoulder
+    4300034: Saw_Hand
+    4300036: BladeMain
+    4300038: BladeAxle
+    4300040: Spike37
+    4300042: Gun_L_Connector
+    4300044: Gun_L_Shoulder
+    4300046: Gun_L_Case
+    4300048: Gun_L_Hole1
+    4300050: Gun_L_Hole2
+    4300052: Gun_L_Hole3
+    4300054: Gun_L_Hole4
+    4300056: MainGear_GEO
+    4300058: RotatorGear_GEO
+    4300060: Exhaust1_GEO
+    4300062: Exhaust2_GEO
+    4300064: InnerRotator_GEO
+    4300066: Balancer_GEO
+    4300068: MiddleAxle_GEO
+    4300070: TorchArm_GEO
+    4300072: Torch_GEO
+    4300074: TorchLens_GEO
+    4300076: Head_Outside_Bottom_GEO
+    4300078: Head_Inside_GEO
+    4300080: Head_Outside_Top_GEO
+    4300082: Head_Outside_Top_Panel_GEO
+    4300084: Leg_F_Cover_Geo
+    4300086: Leg_F_End_Geo
+    4300088: Leg_F_Middle2_Rotate_GEO
+    4300090: Leg_F_Middle1_Rotate_GEO
+    4300092: Leg_F_Top_Bone_GEO
+    4300094: Leg_F_Top_Rotate_GEO
+    4300096: Leg_R_End_Geo
+    4300098: Leg_R_Cover_Geo
+    4300100: Leg_R_Middle2_Rotate_GEO
+    4300102: Leg_R_Middle1_Rotate_GEO
+    4300104: Leg_R_Top_Bone_GEO
+    4300106: Leg_R_Top_Rotate_GEO
+    4300108: Leg_R_End_Geo
+    4300110: Leg_R_Cover_Geo
+    4300112: Leg_R_Middle2_Rotate_GEO
+    4300114: Leg_R_Middle1_Rotate_GEO
+    4300116: Leg_R_Top_Rotate_GEO
+    4300118: Leg_R_Top_Bone_GEO
+    7400000: Idle
+    7400002: IdleLook
+    7400004: IdleAttention
+    7400006: IdleShowingOff
+    7400008: Eating
+    7400010: Oiling
+    7400012: Petting
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: IdleLook
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 540
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: IdleAttention
+      takeName: Take 001
+      firstFrame: 541
+      lastFrame: 830
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: IdleShowingOff
+      takeName: Take 001
+      firstFrame: 831
+      lastFrame: 1230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eating
+      takeName: Take 001
+      firstFrame: 1231
+      lastFrame: 1510
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Oiling
+      takeName: Take 001
+      firstFrame: 1511
+      lastFrame: 1790
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Petting
+      takeName: Take 001
+      firstFrame: 1791
+      lastFrame: 2040
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 2
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 0
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b5b9ef3f503caa94eac501df740d5682,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,28 +12,30 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114499678700499964}
-  - {fileID: 114539280285637062}
-  - {fileID: 114346538053318882}
-  - {fileID: 114632641749086760}
-  - {fileID: 114980053216788746}
-  - {fileID: 114354384759850816}
-  - {fileID: 114428121553063548}
+  - {fileID: 114732439376711886}
+  - {fileID: 114982558853457128}
+  - {fileID: 114327496776518502}
+  - {fileID: 114801011561650198}
+  - {fileID: 114712245528991560}
+  - {fileID: 114311587876467564}
+  - {fileID: 114903258796073146}
   EditorEvents:
-  - {fileID: 114728539759592928}
-  - {fileID: 114916337262479804}
-  - {fileID: 114721958841980656}
-  - {fileID: 114627381460235984}
-  - {fileID: 114355082093303978}
-  - {fileID: 114400146562160502}
-  - {fileID: 114630271250231932}
-  - {fileID: 114158036667387928}
-  - {fileID: 114052213825081712}
-  - {fileID: 114560457973340906}
-  - {fileID: 114166697470594464}
-  MasterBankRef: {fileID: 114346538053318882}
-  StringsBankRef: {fileID: 114499678700499964}
-  stringsBankWriteTime: 636750607101614191
+  - {fileID: 114331359300185672}
+  - {fileID: 114191792108509442}
+  - {fileID: 114224461984970082}
+  - {fileID: 114504702041306222}
+  - {fileID: 114641727670678166}
+  - {fileID: 114416099915826666}
+  - {fileID: 114076743509646370}
+  - {fileID: 114924022895259474}
+  - {fileID: 114229303038361270}
+  - {fileID: 114499055329329960}
+  - {fileID: 114281821414874262}
+  - {fileID: 114841883429701864}
+  - {fileID: 114353224799056418}
+  MasterBankRef: {fileID: 114903258796073146}
+  StringsBankRef: {fileID: 114732439376711886}
+  stringsBankWriteTime: 636751394789389767
   cacheVersion: 2
 --- !u!114 &114052213825081712
 MonoBehaviour:
@@ -57,6 +59,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5108
+--- !u!114 &114076743509646370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/wantsAttention
+  guid: 83443026aee99e4bbe4fcde5ba03f141
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4702
+--- !u!114 &114080941336599568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/breaking
+  guid: 0101a7480945d742bf33df2863af5331
+  Banks:
+  - {fileID: 114354384759850816}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 783
 --- !u!114 &114158036667387928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +147,146 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5073
+--- !u!114 &114191792108509442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/showOffShort
+  guid: 2486a1b0aaf7654ca2e74af5a8916c1f
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4829
+--- !u!114 &114217977428564566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114222575522050826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/repair
+  guid: f1e972cec5662d40ae28ad730d167dd1
+  Banks:
+  - {fileID: 114354384759850816}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 783
+--- !u!114 &114224461984970082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/showOffLong
+  guid: 4381435291e84344a12136bf51c3526d
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7105
+--- !u!114 &114229303038361270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/petting
+  guid: c647887297aa8b4fa75518622d064909
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5108
+--- !u!114 &114244091009300194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114281821414874262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/oilingUp
+  guid: e506d4a0e31c5a42ae27b4ec4afdcb6a
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5073
 --- !u!114 &114283079722717082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +302,57 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114286276211368884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114311587876467564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Music.bank
+  lastModified: 636751394789715121
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4070
+  Exists: 1
+--- !u!114 &114327496776518502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\SFX.bank
+  lastModified: 636751394790645909
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 15188
+  Exists: 1
 --- !u!114 &114331016027870040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +368,28 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114331359300185672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/breaking
+  guid: 0101a7480945d742bf33df2863af5331
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 783
 --- !u!114 &114346538053318882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,12 +403,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Master
     Bank.bank
-  lastModified: 636750607101564146
+  lastModified: 636751339520000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 12620
   Exists: 1
+--- !u!114 &114352828134055328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114353224799056418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/looped bgm
+  guid: be8841b117222347aba13f0fe89d32db
+  Banks:
+  - {fileID: 114311587876467564}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114603767491750230}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18228
 --- !u!114 &114354384759850816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,11 +459,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\SFX.bank
-  lastModified: 636750607101964508
+  lastModified: 636751339540000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 12236
+    Value: 673440
   Exists: 1
 --- !u!114 &114355082093303978
 MonoBehaviour:
@@ -212,6 +509,43 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4678
+--- !u!114 &114405998173467844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114416099915826666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lookLeftAndRight
+  guid: 809d7a46000847418688a181ea27c816
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4678
 --- !u!114 &114426970581301402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,12 +581,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\SFX.assets.bank
-  lastModified: 636750607102164692
+  lastModified: 636751302225072571
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 609120
-  Exists: 1
+    Value: 658720
+  Exists: 0
 --- !u!114 &114440482838275128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +606,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 710720
   Exists: 1
+--- !u!114 &114499055329329960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/eating
+  guid: df42a1045164ef47b66ac0628e55fb70
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4864
 --- !u!114 &114499678700499964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,12 +640,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: alakajam4\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636750607101614191
+  lastModified: 636751339520000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1438
+    Value: 1368
   Exists: 1
+--- !u!114 &114504702041306222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lookLeftAndRight2
+  guid: 65bea76faec5f54c9d90fda359f6d966
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7128
 --- !u!114 &114528553457418470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,11 +710,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Music.bank
-  lastModified: 636750607101664237
+  lastModified: 636751339520000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 4070
+    Value: 862752
   Exists: 1
 --- !u!114 &114560457973340906
 MonoBehaviour:
@@ -361,6 +739,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 4864
 --- !u!114 &114580282156150578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114603767491750230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,12 +846,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Music.assets.bank
-  lastModified: 636750607101844398
+  lastModified: 636751302224512063
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 859136
-  Exists: 1
+  Exists: 0
+--- !u!114 &114641727670678166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/youLose
+  guid: 6aa7c0a48054aa47a3a804b994f1fc12
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4969
 --- !u!114 &114690101217260336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +911,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 54752
+--- !u!114 &114712245528991560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\SFX.assets.bank
+  lastModified: 636751394790866101
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 658720
+  Exists: 1
 --- !u!114 &114721958841980656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,11 +966,11 @@ MonoBehaviour:
   guid: be8841b117222347aba13f0fe89d32db
   Banks:
   - {fileID: 114539280285637062}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114878529729516062}
+  - {fileID: 114286276211368884}
   MinDistance: 0
   MaxDistance: 0
   Length: 18228
@@ -556,6 +989,58 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114732439376711886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: alakajam4\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636751394789389767
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1514
+  Exists: 1
+--- !u!114 &114768343796241986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114801011561650198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Master
+    Bank.assets.bank
+  lastModified: 636751394789359740
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 450
+  Exists: 1
 --- !u!114 &114820710623234168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +1059,43 @@ MonoBehaviour:
   - Name: Desktop
     Value: 714
   Exists: 1
+--- !u!114 &114827171321546486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114841883429701864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/repair
+  guid: f1e972cec5662d40ae28ad730d167dd1
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 783
 --- !u!114 &114878529729516062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,6 +1111,25 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114903258796073146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636751394789329710
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12620
+  Exists: 1
 --- !u!114 &114916337262479804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +1152,43 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4829
+--- !u!114 &114924022895259474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/idleBrathing
+  guid: 8df9f09e6eef6a46841738f10f6c3d19
+  Banks:
+  - {fileID: 114327496776518502}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9427
+--- !u!114 &114954761649566010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progress
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114980053216788746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,9 +1202,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Master
     Bank.assets.bank
-  lastModified: 636750607101594169
+  lastModified: 636751302224251819
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 450
+  Exists: 0
+--- !u!114 &114982558853457128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Wrex-PC\Desktop\Alakajam4\Alakajam4\Ark4\alakajam4\Build\Desktop\Music.assets.bank
+  lastModified: 636751394789915292
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 859136
   Exists: 1

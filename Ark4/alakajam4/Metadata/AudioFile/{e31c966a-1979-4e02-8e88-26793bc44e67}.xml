@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e31c966a-1979-4e02-8e88-26793bc44e67}">
+        <property name="assetPath">
+            <value>Animations/detach3.aif</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.78324263038548758</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{ca54a3bf-8435-4e05-a0ab-c41e47e53d23}</destination>
+        </relationship>
+    </object>
+</objects>

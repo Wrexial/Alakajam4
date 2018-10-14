@@ -49,23 +49,22 @@ public class Pet : MonoBehaviour
     private int _foodLevel;
     private int _oilLevel;
 
-    private const float FOOD_CHANGE_TIME_MIN = 6;
-    private const float FOOD_CHANGE_TIME_MAX = 8;
+    private const float FOOD_CHANGE_TIME_MIN = 5f;
+    private const float FOOD_CHANGE_TIME_MAX = 7f;
     private const int FOOD_CHANGE_STEP = 5;
-    private const int FOOD_GRANT_PERCENTAGE = 5;
+    private const int FOOD_GRANT_PERCENTAGE = 15;
 
-    private const float OIL_TIME_MIN = 10;
-    private const float OIL_TIME_MAX = 15;
+    private const float OIL_TIME_MIN = 8f;
+    private const float OIL_TIME_MAX = 12f;
     private const int OIL_CHANGE_STEP = 5;
-    private const int OIL_GRANT_PERCENTAGE = 5;
+    private const int OIL_GRANT_PERCENTAGE = 10;
 
-    private const float PART_TIME_MIN = 20;
-    private const float PART_TIME_MAX = 30;
+    private const float PART_TIME_MIN = 3f;
+    private const float PART_TIME_MAX = 6f;
 
     private CoroutineHandle? _oilHandler;
     private CoroutineHandle? _foodHandler;
     private CoroutineHandle? _partHandler;
-    private CoroutineHandle? _setSlotCoroutine;
     private CoroutineHandle? _replenishFoodCoroutine;
     private CoroutineHandle? _replenishOilCoroutine;
     private CoroutineHandle? _handleActionsCoroutine;
@@ -74,32 +73,58 @@ public class Pet : MonoBehaviour
     private Animator _animator;
 
     public bool GameOver = false;
+    public GameObject GameOverOverlay;
 
     public bool IsIdle { get { return _animator.GetCurrentAnimatorStateInfo(0).IsTag("Idle"); } }
     public Queue<QueuedPetActions> queuedActions = new Queue<QueuedPetActions>();
-
+    private const float TIME_TO_IDLE = 5f;
     private static readonly int FOOD_ANIMATOR_TRIGGER = Animator.StringToHash("HandleFood");
     private static readonly int OIL_ANIMATOR_TRIGGER = Animator.StringToHash("HandleOil");
-    private static readonly int TOPHEAD_DROP_ANIMATOR_TRIGGER = Animator.StringToHash("HandleTopHeadDrop");
-    private static readonly int TOPHEAD_REPAIR_ANIMATOR_TRIGGER = Animator.StringToHash("HandleTopHeadRepair");
-    private static readonly int BOTTOMHEAD_DROP_ANIMATOR_TRIGGER = Animator.StringToHash("HandleBottomHeadDrop");
-    private static readonly int BOTTOMHEAD_REPAIR_ANIMATOR_TRIGGER = Animator.StringToHash("HandleBottomHeadRepair");
-    private static readonly int EYE_DROP_ANIMATOR_TRIGGER = Animator.StringToHash("HandleEyeDrop");
-    private static readonly int EYE_REPAIR_ANIMATOR_TRIGGER = Animator.StringToHash("HandleEyeRepair");
-    private static readonly int LEG_DROP_ANIMATOR_TRIGGER = Animator.StringToHash("HandleLegDrop");
-    private static readonly int LEG_REPAIR_ANIMATOR_TRIGGER = Animator.StringToHash("HandleLegRepair");
+
+    private static readonly int IDLE1_ANIMATOR_TRIGGER = Animator.StringToHash("HandleIdle1");
+    private static readonly int IDLE2_ANIMATOR_TRIGGER = Animator.StringToHash("HandleIdle2");
+    private static readonly int IDLE3_ANIMATOR_TRIGGER = Animator.StringToHash("HandleIdle3");
+    private static readonly int IDLE4_ANIMATOR_TRIGGER = Animator.StringToHash("HandleIdle4");
+    private int[] _idleAnims;
+
+    [FMODUnity.EventRef]
+    public string EatingSFX;
+    [FMODUnity.EventRef]
+    public string OilingSFX;
+    [FMODUnity.EventRef]
+    public string BreakingSFX;
+    [FMODUnity.EventRef]
+    public string FixingSFX;
+    [FMODUnity.EventRef]
+    public string GameOverSFX;
+
+    [FMODUnity.EventRef]
+    public List<string> _soundIdleAnims;
+
+    private const string BGM_PARAMETER = "progress";
+    private FMODUnity.StudioEventEmitter _bgmAudioEmitter;
+    private FMOD.Studio.ParameterInstance _parameter;
+    private bool _hasParameterForBGM;
 
     private void Awake()
     {
         _dragAssist = FindObjectOfType<DragAssist>();
         _animator = GetComponent<Animator>();
-
+        _idleAnims = new int[4];
+        _idleAnims[0] = IDLE1_ANIMATOR_TRIGGER;
+        _idleAnims[1] = IDLE2_ANIMATOR_TRIGGER;
+        _idleAnims[2] = IDLE3_ANIMATOR_TRIGGER;
+        _idleAnims[3] = IDLE4_ANIMATOR_TRIGGER;
 
         FoodLevelSlider.minValue = 0;
         FoodLevelSlider.maxValue = 100;
 
         OilLevelSlider.minValue = 0;
         OilLevelSlider.maxValue = 100;
+
+        _bgmAudioEmitter = FindObjectOfType<FMODUnity.StudioEventEmitter>();
+        _hasParameterForBGM = false;
+        GameOverOverlay.SetActive(false);
     }
 
     private void Start()
@@ -118,10 +143,12 @@ public class Pet : MonoBehaviour
 
     private IEnumerator<float> HandleActions()
     {
+        var timer = 0f;
         while (!GameOver)
         {
             if (queuedActions.Count > 0)
             {
+                timer = 0f;
                 if (IsIdle)
                 {
                     var currentAction = queuedActions.Dequeue();
@@ -129,32 +156,40 @@ public class Pet : MonoBehaviour
                     yield return Timing.WaitForSeconds(0.1f); //Wait a bit for that handle to trigger
                 }
             }
+            else
+            {
+                timer += Time.deltaTime;
+                if (timer >= TIME_TO_IDLE)
+                {
+                    timer = 0;
+                    _animator.SetTrigger(GetRandomIdle());
+                }
+            }
 
             yield return Timing.WaitForOneFrame;
         }
     }
 
+    private int GetRandomIdle()
+    {
+        var i = Random.Range(0, 4);
+        FMODUnity.RuntimeManager.PlayOneShot(_soundIdleAnims[i], transform.position);
+        return _idleAnims[i];
+    }
+
     private void EnablePieces()
     {
-        if (ActiveTopHeadPiece != null)
-        {
-            ActiveTopHeadPiece.Enable(false);
-        }
+        ActiveTopHeadPiece = _dragAssist.GetRandomPart(SlotType.TopHeadPlate, null);
+        ActiveTopHeadPiece.Enable(true, false);
 
-        if (ActiveBottomHeadPiece != null)
-        {
-            ActiveBottomHeadPiece.Enable(false);
-        }
+        ActiveBottomHeadPiece = _dragAssist.GetRandomPart(SlotType.BottomHeadPlate, null);
+        ActiveBottomHeadPiece.Enable(true, false);
 
-        if (ActiveEyePiece != null)
-        {
-            ActiveEyePiece.Enable(false);
-        }
+        ActiveEyePiece = _dragAssist.GetRandomPart(SlotType.Eye, null);
+        ActiveEyePiece.Enable(true, false);
 
-        if (ActiveLegPiece != null)
-        {
-            ActiveLegPiece.Enable(false);
-        }
+        ActiveLegPiece = _dragAssist.GetRandomPart(SlotType.Leg, null);
+        ActiveLegPiece.Enable(true, false);
     }
 
     private void OnDestroy()
@@ -162,7 +197,6 @@ public class Pet : MonoBehaviour
         TimingHandlers.CleanlyKillCoroutine(ref _oilHandler);
         TimingHandlers.CleanlyKillCoroutine(ref _foodHandler);
         TimingHandlers.CleanlyKillCoroutine(ref _partHandler);
-        TimingHandlers.CleanlyKillCoroutine(ref _setSlotCoroutine);
         TimingHandlers.CleanlyKillCoroutine(ref _replenishFoodCoroutine);
         TimingHandlers.CleanlyKillCoroutine(ref _replenishOilCoroutine);
         TimingHandlers.CleanlyKillCoroutine(ref _handleActionsCoroutine);
@@ -171,66 +205,46 @@ public class Pet : MonoBehaviour
     private IEnumerator<float> HandlePartLevel()
     {
         var partNextWait = 0f;
-        var dropTriggerToPlay = 0;
         var slotBeingHandled = SlotType.End;
-        
+        BodyPart oldPart = null;
+        yield return Timing.WaitForSeconds(5f);
+
         while (!GameOver)
         {
             SetTimer(ref partNextWait, PART_TIME_MIN, PART_TIME_MAX);
             yield return Timing.WaitForSeconds(partNextWait);
-
-            var queuedAction = new QueuedPetActions();
-            queuedActions.Enqueue(queuedAction);
-            yield return Timing.WaitUntilDone(queuedAction);
-
             RefreshValidDroppingPartType(ref slotBeingHandled);
-            dropTriggerToPlay = GetDropTriggerToPlay(slotBeingHandled);
-            _animator.SetTrigger(dropTriggerToPlay);
-            //TODO: Hookup sfx
-
-            yield return Timing.WaitForSeconds(10f); // This should be at least animation time
-            DisableCurrentActiveSlot(slotBeingHandled);
+            DisableCurrentActiveSlot(slotBeingHandled, ref oldPart);
+            FMODUnity.RuntimeManager.PlayOneShot(BreakingSFX, transform.position);
+            UpdateAudioLevel();
             yield return Timing.WaitForSeconds(0.5f); // just wait a bit, we're in no hurry
             CheckIfGameOver();
-            _dragAssist.SetRandomPartInUI(slotBeingHandled);
+            _dragAssist.SetRandomPartInUI(slotBeingHandled, oldPart);
         }
     }
 
-    private int GetDropTriggerToPlay(SlotType slotBeingHandled)
-    {
-        switch (slotBeingHandled)
-        {
-            case SlotType.TopHeadPlate:
-                return TOPHEAD_DROP_ANIMATOR_TRIGGER;
-            case SlotType.BottomHeadPlate:
-                return BOTTOMHEAD_DROP_ANIMATOR_TRIGGER;
-            case SlotType.Eye:
-                return EYE_DROP_ANIMATOR_TRIGGER;
-            case SlotType.Leg:
-                return LEG_DROP_ANIMATOR_TRIGGER;
-        }
-
-        return -1;
-    }
-
-    private void DisableCurrentActiveSlot(SlotType type)
+    private void DisableCurrentActiveSlot(SlotType type, ref BodyPart oldPart)
     {
         switch (type)
         {
             case SlotType.TopHeadPlate:
                 ActiveTopHeadPiece.Disable(true);
+                oldPart = ActiveTopHeadPiece;
                 ActiveTopHeadPiece = null;
                 break;
             case SlotType.BottomHeadPlate:
                 ActiveBottomHeadPiece.Disable(true);
+                oldPart = ActiveBottomHeadPiece;
                 ActiveBottomHeadPiece = null;
                 break;
             case SlotType.Eye:
                 ActiveEyePiece.Disable(true);
+                oldPart = ActiveEyePiece;
                 ActiveEyePiece = null;
                 break;
             case SlotType.Leg:
                 ActiveLegPiece.Disable(true);
+                oldPart = ActiveLegPiece;
                 ActiveLegPiece = null;
                 break;
         }
@@ -264,12 +278,19 @@ public class Pet : MonoBehaviour
 
     private void CheckIfGameOver()
     {
+        if (GameOver)
+        {
+            return;
+        }
+
         if ((ActiveTopHeadPiece == null && ActiveBottomHeadPiece == null &&
             ActiveEyePiece == null && ActiveLegPiece == null) || OilLevel <= 0 || FoodLevel <= 0)
         {
-            //TODO: Game over
             Debug.Log("GameOver");
             GameOver = true;
+            FMODUnity.RuntimeManager.PlayOneShot(GameOverSFX, transform.position);
+            _parameter.setValue(0);
+            GameOverOverlay.SetActive(true);
         }
     }
 
@@ -297,7 +318,7 @@ public class Pet : MonoBehaviour
         var i = Random.Range(0f, 100f);
         if (i < FOOD_GRANT_PERCENTAGE)
         {
-            _dragAssist.SetRandomPartInUI(SlotType.Food);
+            _dragAssist.SetRandomPartInUI(SlotType.Food, null);
         }
     }
 
@@ -325,7 +346,7 @@ public class Pet : MonoBehaviour
         var i = Random.Range(0f, 100f);
         if (i < OIL_GRANT_PERCENTAGE)
         {
-            _dragAssist.SetRandomPartInUI(SlotType.Oil);
+            _dragAssist.SetRandomPartInUI(SlotType.Oil, null);
         }
     }
 
@@ -347,7 +368,7 @@ public class Pet : MonoBehaviour
 
         OilLevel = 100;
         _animator.SetTrigger(OIL_ANIMATOR_TRIGGER);
-        //TODO: Hookup sfx
+        FMODUnity.RuntimeManager.PlayOneShot(OilingSFX, transform.position);
     }
 
     public void ReplenishFood()
@@ -363,20 +384,17 @@ public class Pet : MonoBehaviour
 
         FoodLevel = 100;
         _animator.SetTrigger(FOOD_ANIMATOR_TRIGGER);
-        //TODO: Hookup sfx
+        FMODUnity.RuntimeManager.PlayOneShot(EatingSFX, transform.position);
     }
 
     public void SetSlot(BodyPart part)
     {
-        part.Enable(true);
-        _setSlotCoroutine = Timing.RunCoroutine(SetSlotCoroutine(part));
-    }
+        if (GameOver)
+        {
+            return;
+        }
 
-    private IEnumerator<float> SetSlotCoroutine(BodyPart part)
-    {
-        var queuedAction = new QueuedPetActions();
-        queuedActions.Enqueue(queuedAction);
-        yield return Timing.WaitUntilDone(queuedAction);
+        part.Enable(true);
 
         switch (part.Type)
         {
@@ -394,34 +412,52 @@ public class Pet : MonoBehaviour
                 break;
         }
 
-        
-        var setTriggerToPlay = GetSetTriggerToPlay(part.Type);
-        _animator.SetTrigger(setTriggerToPlay);
-        //TODO: Hookup sfx
+        UpdateAudioLevel();
+        FMODUnity.RuntimeManager.PlayOneShot(FixingSFX, transform.position);
     }
 
-    private int GetSetTriggerToPlay(SlotType slotBeingHandled)
+    private void UpdateAudioLevel()
     {
-        switch (slotBeingHandled)
+        if (GameOver)
         {
-            case SlotType.TopHeadPlate:
-                return TOPHEAD_REPAIR_ANIMATOR_TRIGGER;
-            case SlotType.BottomHeadPlate:
-                return BOTTOMHEAD_REPAIR_ANIMATOR_TRIGGER;
-            case SlotType.Eye:
-                return EYE_REPAIR_ANIMATOR_TRIGGER;
-            case SlotType.Leg:
-                return LEG_REPAIR_ANIMATOR_TRIGGER;
+            return;
         }
 
-        return -1;
+        var i = 0;
+        if (ActiveTopHeadPiece == null)
+        {
+            i++;
+        }
+
+        if (ActiveLegPiece == null)
+        {
+            i++;
+        }
+
+        if (ActiveBottomHeadPiece == null)
+        {
+            i++;
+        }
+
+        if (ActiveEyePiece == null)
+        {
+            i++;
+        }
+
+        i = Mathf.Clamp(i, 0, 3);
+
+        if (!_hasParameterForBGM)
+        {
+            _bgmAudioEmitter.EventInstance.getParameter(BGM_PARAMETER, out _parameter);
+            _hasParameterForBGM = true;
+        }
+
+        _parameter.setValue(i);
     }
 
     private void SetSlot(ref BodyPart activePieceSlot, BodyPart part, Transform joint)
     {
         activePieceSlot = part;
-        activePieceSlot.transform.SetParent(joint);
-        activePieceSlot.transform.localPosition = Vector3.zero;
-        activePieceSlot.transform.localScale = Vector3.one;
+        activePieceSlot.SetDefaultPosition();
     }
 }

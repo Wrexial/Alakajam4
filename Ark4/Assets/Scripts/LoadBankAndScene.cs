@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LoadBankAndScene : MonoBehaviour
 {
-    public int SceneToLoad;
-
     [FMODUnity.BankRef]
     public List<string> banks;
+    public GameObject PlayButton;
+    public GameObject AudioPrefab;
+    private bool init = false;
 
     private void Awake()
     {
@@ -28,9 +28,12 @@ public class LoadBankAndScene : MonoBehaviour
                 loaded = false;
             }
         }
-        if (loaded)
+
+        if (loaded && !init)
         {
-            SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
+            init = true;
+            Instantiate(AudioPrefab);
+            PlayButton.SetActive(true);
         }
     }
 

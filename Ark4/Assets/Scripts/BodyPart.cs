@@ -1,65 +1,109 @@
 ﻿using MEC;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class BodyPart : MonoBehaviour
 {
-    private const float ANIMATION_TIME = 0.4f;
     public SlotType Type;
-    private Material _material;
+    public Transform IngameElement;
+    public Transform UIElement;
+
+    private Material[] _materials;
+
     private CoroutineHandle? _showingCoroutine;
     private readonly int DISSOLVE_PROPERTY = Shader.PropertyToID("_SliceAmount");
     private readonly int DISSOLVE_OFFSET_PROPERTY = Shader.PropertyToID("_SliceGuide");
 
-    public void Disable(bool anim = false)
+    private const float ANIMATION_TIME = 0.75f;
+    
+    public void SetDefaultPosition()
     {
-        if (anim)
+        IngameElement.gameObject.SetActive(true);
+        //transform.localPosition = _position;
+        //var rot = transform.rotation;
+        //rot.eulerAngles = _rotation;
+        //transform.localRotation = rot;
+        //transform.localScale = _scale;
+    }
+
+    public void Disable(bool ingameElement, bool anim = true)
+    {
+        if (ingameElement)
         {
-            _showingCoroutine = Timing.RunCoroutine(Show(false));
+            if (anim)
+            {
+                TimingHandlers.CleanlyKillCoroutine(ref _showingCoroutine);
+                _showingCoroutine = Timing.RunCoroutine(Show(false));
+            }
+            else
+            {
+                IngameElement.gameObject.SetActive(false);
+            }
         }
         else
         {
-            gameObject.SetActive(false);
+            UIElement.gameObject.SetActive(false);
         }
     }
 
-    public void Enable(bool anim = true)
+    public void Enable(bool ingameElement, bool anim = true)
     {
-        if (anim)
+        if (ingameElement)
         {
-            _showingCoroutine = Timing.RunCoroutine(Show(true));
+            if (anim)
+            {
+                TimingHandlers.CleanlyKillCoroutine(ref _showingCoroutine);
+                _showingCoroutine = Timing.RunCoroutine(Show(true));
+            }
+            else
+            {
+                IngameElement.gameObject.SetActive(true);
+            }
         }
         else
         {
-            gameObject.SetActive(true);
+            UIElement.gameObject.SetActive(true);
         }
     }
 
     private IEnumerator<float> Show(bool shouldEnable)
     {
-        if (_material == null)
+        if (_materials == null)
         {
             //Lazy load this shit....
-            _material = GetComponent<MeshRenderer>().material;
+            var renderers = IngameElement.GetComponentsInChildren<MeshRenderer>();
+            _materials = new Material[renderers.Length];
+
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                _materials[i] = renderers[i].material;
+            }
         }
 
-        gameObject.SetActive(true);
+        IngameElement.gameObject.SetActive(true);
 
         var timer = 0f;
         var delta = 0f;
 
-        _material.SetTextureOffset(DISSOLVE_OFFSET_PROPERTY, GetRandomOffset());
+        for (int i = 0; i < _materials.Length; i++)
+        {
+            _materials[i].SetTextureOffset(DISSOLVE_OFFSET_PROPERTY, GetRandomOffset());
+        }
+
         while (delta != 1f)
         {
             timer += Time.deltaTime;
             delta = Mathf.Clamp01(timer / ANIMATION_TIME);
-            _material.SetFloat(DISSOLVE_PROPERTY, shouldEnable ? 1 - delta : delta);  //The value 0 is on, 1 is off
+
+            for (int i = 0; i < _materials.Length; i++)
+            {
+                _materials[i].SetFloat(DISSOLVE_PROPERTY, shouldEnable ? 1 - delta : delta);  //The value 0 is on, 1 is off
+            }
             yield return Timing.WaitForOneFrame;
         }
 
-        gameObject.SetActive(shouldEnable);
+        IngameElement.gameObject.SetActive(shouldEnable);
     }
 
     private Vector2 GetRandomOffset()
